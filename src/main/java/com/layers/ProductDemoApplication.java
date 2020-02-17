@@ -11,6 +11,12 @@ public class ProductDemoApplication
 	{
 		SpringApplication.run(ProductDemoApplication.class, args);
 		System.out.println("In Master Branch");
+		System.out.println("New Feature 1 Added");
+		System.out.println("New Feature 2 Added");
+		System.out.println("New Feature 3 Added");
+		System.out.println("New Feature 4 Added");
+		System.out.println("New Feature 5 Added");
+		System.out.println("New Feature 6 Added");
 	}
 
 }
