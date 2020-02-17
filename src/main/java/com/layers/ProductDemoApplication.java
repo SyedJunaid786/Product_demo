@@ -13,6 +13,7 @@ public class ProductDemoApplication
 		System.out.println("Test Feature");
 		System.out.println("New Feature 1 Added");
 		System.out.println("New Feature 2 Added");
+		System.out.println("New Feature 3 Added");
 	}
 
 }
