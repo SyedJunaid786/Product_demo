@@ -24,7 +24,7 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 @RestController
-@RequestMapping("/product")
+@RequestMapping("/products")
 @CrossOrigin(origins = "*")
 @Api(value="onlinestore", description="Operations pertaining to products in Online Store")
 public class ProductController
