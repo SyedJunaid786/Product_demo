@@ -11,6 +11,7 @@ public class ProductDemoApplication
 	{
 		SpringApplication.run(ProductDemoApplication.class, args);
 		System.out.println("Test Feature");
+		System.out.println("New Feature Added");
 	}
 
 }
