@@ -18,6 +18,7 @@ public class ProductDemoApplication
 		System.out.println("New Feature 5 Added");
 		System.out.println("New Feature 6 Added");
 		System.out.println("New Feature 7 Added");
+		System.out.println("New Feature 8 Added");
 	}
 
 }
