@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.Table;
 import javax.persistence.Version;
 
 import io.swagger.annotations.ApiModelProperty;
@@ -16,7 +17,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 
-
+@Table
 @Entity
 @Getter
 @Setter
@@ -29,9 +30,9 @@ import lombok.Setter;
 public class Product
 {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.TABLE)
     @ApiModelProperty(notes = "The database generated product ID")
-    @Column(name = "id")
+    @Column(name = "id" , nullable=false)
     private Integer id;
     
     @Version
