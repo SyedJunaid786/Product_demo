@@ -34,7 +34,5 @@ public interface ProductRepository extends JpaRepository<Product, Integer>
 	
 	 List<Product> findTopByOrderByImageUrlDesc();
 	 
-	 List<Product> findFirstByOrderByImageUrlDesc();
-	 
-	 
+	 List<Product> findFirstByOrderByImageUrlDesc();	 
 }

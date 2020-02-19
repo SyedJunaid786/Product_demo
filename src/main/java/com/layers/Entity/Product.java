@@ -2,6 +2,7 @@ package com.layers.Entity;
 
 import java.math.BigDecimal;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -30,6 +31,7 @@ public class Product
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @ApiModelProperty(notes = "The database generated product ID")
+    @Column(name = "id")
     private Integer id;
     
     @Version
@@ -47,54 +49,5 @@ public class Product
     
     @ApiModelProperty(notes = "The price of the product", required = true)
     private BigDecimal price;
-    
-//    public String getDescription() 
-//    {
-//        return description;
-//    }
-//    public void setDescription(String description)
-//    {
-//        this.description = description;
-//    }
-//    public Integer getVersion()
-//    {
-//        return version;
-//    }
-//    public void setVersion(Integer version) 
-//    {
-//        this.version = version;
-//    }
-//    public Integer getId()
-//    {
-//        return id;
-//    }
-//    public void setId(Integer id) 
-//    {
-//        this.id = id;
-//    }
-//    public String getProductId() 
-//    {
-//        return productId;
-//    }
-//    public void setProductId(String productId)
-//    {
-//        this.productId = productId;
-//    }
-//    public String getImageUrl()
-//    {
-//        return imageUrl;
-//    }
-//    public void setImageUrl(String imageUrl)
-//    {
-//        this.imageUrl = imageUrl;
-//    }
-//    public BigDecimal getPrice()
-//    {
-//        return price;
-//    }
-//    public void setPrice(BigDecimal price)
-//    {
-//        this.price = price;
-//    }
 }
 
