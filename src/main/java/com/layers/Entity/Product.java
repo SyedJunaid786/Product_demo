@@ -30,7 +30,7 @@ import lombok.Setter;
 public class Product
 {
     @Id
-    @GeneratedValue(strategy = GenerationType.TABLE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @ApiModelProperty(notes = "The database generated product ID")
     @Column(name = "id" , nullable=false)
     private Integer id;

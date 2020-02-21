@@ -2,6 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+	
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -9,41 +10,45 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	
-	<groupId>com.java</groupId>
+	<groupId>com.junaid</groupId>
 	<artifactId>Product_demo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Product_demo</name>
-	<description>Demo project for UserMangement</description>
+	<name>Syed</name>
+	<packaging>jar</packaging>
+	
+	<description>Demo project for Products</description>
 
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
 
 	<dependencies>
-		<dependency>
+	
+	<!-- Another project dependency -->
+	  <!-- <dependency>
+	      <groupId>com.webecncyclop</groupId>
+	      <artifactId>demo</artifactId>
+	      <version>0.0.1-SNAPSHOT</version>
+	      
+	  </dependency> -->
+	      
+	   <dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
+		</dependency> 
 		
-		<!-- https://mvnrepository.com/artifact/org.apache.maven/maven-plugin-api -->
-<!-- <dependency>
-    <groupId>org.apache.maven</groupId>
-    <artifactId>maven-plugin-api</artifactId>
-    <version>3.6.2</version>
-</dependency>
-		 -->
 		
 		<!-- Swagger UI -->
-<dependency>
+ <dependency>
     <groupId>io.springfox</groupId>
     <artifactId>springfox-swagger2</artifactId>
     <version>2.6.1</version>
     <scope>compile</scope>
-</dependency>
+</dependency> 
 	
 	<!-- Swagger UI -->
 <dependency>
@@ -51,7 +56,7 @@
     <artifactId>springfox-swagger-ui</artifactId>
     <version>2.6.1</version>
     <scope>compile</scope>
-</dependency>
+</dependency> 
 
   <!--  Hibernate Core -->
         <dependency>
@@ -66,16 +71,18 @@
 			<optional>true</optional>
 		</dependency>
 		
-		<dependency>
+	  <dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<scope>runtime</scope>
-		</dependency>
-		<dependency>
+		</dependency> 
+		
+		<dependency>   
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
 		</dependency>
+		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -87,6 +94,7 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+		
 	</dependencies>
 
 	<build>
@@ -94,8 +102,9 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				
 			</plugin>
 		</plugins>
-	</build>
+	</build> 
 
 </project>
