@@ -51,7 +51,7 @@ public class Product
     
     @ApiModelProperty(notes = "The price of the product", required = true)
 //    private List<Integer> price;
-    private BigDecimal price;
+     private BigDecimal price;
   
 }
 
