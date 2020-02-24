@@ -1,6 +1,6 @@
 package com.layers.Entity;
 
-import java.util.List;
+import java.math.BigDecimal;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -50,8 +50,8 @@ public class Product
     
     
     @ApiModelProperty(notes = "The price of the product", required = true)
-    private List<Integer> price;
-//    private BigDecimal price;
+//    private List<Integer> price;
+    private BigDecimal price;
   
 }
 
