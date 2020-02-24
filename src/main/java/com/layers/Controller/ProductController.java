@@ -47,7 +47,7 @@ public class ProductController
     }
     )
     
-    @RequestMapping(value = "/Image/{category}", method= RequestMethod.GET, produces = "application/json")
+    @RequestMapping(value = "/image/{category}", method= RequestMethod.GET, produces = "application/json")
     public ResponseEntity<Iterable<Product>> ImageList(@PathVariable("category") String category,Model model)
     {    
         Iterable<Product> productList = productService.listAllProductsByImage(category);
@@ -60,7 +60,7 @@ public class ProductController
 	
     }
     
-    @RequestMapping(value = "/Version/{category}", method= RequestMethod.GET, produces = "application/json")
+    @RequestMapping(value = "/version/{category}", method= RequestMethod.GET, produces = "application/json")
     public ResponseEntity<Iterable<Product>> VersionList(@PathVariable("category") Integer Version,Model model)
     {   
         Iterable<Product> productList = productService.listAllProductsByVersion(Version);
@@ -73,7 +73,7 @@ public class ProductController
 	
     }
     
-    @RequestMapping(value = "/ProductId/{category}", method= RequestMethod.GET, produces = "application/json")
+    @RequestMapping(value = "/productId/{category}", method= RequestMethod.GET, produces = "application/json")
     public ResponseEntity<Iterable<Product>> ProductIdList(@PathVariable("category") String category,Model model)
     {
         Iterable<Product> productList = productService.listAllProductsByProductId(category);
@@ -87,7 +87,7 @@ public class ProductController
 
     }
     
-    @RequestMapping(value = "/Price/{category}", method= RequestMethod.GET, produces = "application/json")
+    @RequestMapping(value = "/price/{category}", method= RequestMethod.GET, produces = "application/json")
     public ResponseEntity<Iterable<Product>> PriceList(@PathVariable("category") BigDecimal category,Model model)
     {
         Iterable<Product> productList = productService.listAllProductsByPrice(category);
@@ -101,7 +101,7 @@ public class ProductController
         
     }
     
-    @RequestMapping(value = "/Description/{category}", method= RequestMethod.GET, produces = "application/json")
+    @RequestMapping(value = "/description/{category}", method= RequestMethod.GET, produces = "application/json")
     public ResponseEntity<Iterable<Product>> DescriptionList(@PathVariable("category") String category,Model model)
     {
         Iterable<Product> productList = productService.listAllProductsByDescription(category);  
@@ -119,7 +119,11 @@ public class ProductController
     @RequestMapping(value = "/list", method= RequestMethod.GET, produces = "application/json")
     public Iterable<Product> list(Model model)
     {
+    	Long start_time=System.currentTimeMillis();
         Iterable<Product> productList = productService.listAllProducts();
+        Long end_time=System.currentTimeMillis();
+        Long total_time=end_time-start_time;
+        System.out.println(total_time);
         
         return productList;
     }
@@ -146,7 +150,11 @@ public class ProductController
     @RequestMapping(value = "/add", method = RequestMethod.POST, produces = "application/json")
     public ResponseEntity saveProduct(@RequestBody Product product)
     {
+    	Long start_time=System.currentTimeMillis();
         productService.saveProduct(product);
+        Long end_time=System.currentTimeMillis();
+        Long total_time=end_time-start_time;
+        System.out.println(total_time);
         return new ResponseEntity("Product saved successfully", HttpStatus.OK);
     }
     
@@ -171,7 +179,7 @@ public class ProductController
     }
     
     @ApiOperation(value = "Count The Number Of product")
-    @RequestMapping(value="/Count",method= RequestMethod.GET, produces = "application/json")
+    @RequestMapping(value="/count",method= RequestMethod.GET, produces = "application/json")
     public long getProductCount()
 	{
 		return productService.getProductCount();
@@ -183,13 +191,13 @@ public class ProductController
 		return productService.getProductDescription(description, product_id);
 	}
     
-    @RequestMapping(value="/Order",method= RequestMethod.GET, produces = "application/json")
+    @RequestMapping(value="/order",method= RequestMethod.GET, produces = "application/json")
     public List<Product> getOrderByDescription()
 	{
 		return productService.getOrderByDescription();
 	}
     
-    @RequestMapping(value="/Greater/{version}",method= RequestMethod.GET, produces = "application/json")
+    @RequestMapping(value="/greater/{version}",method= RequestMethod.GET, produces = "application/json")
     public ResponseEntity<List<Product>> getGreaterVersion(@PathVariable Integer version)
 	{
     	List<Product> product= productService.getGreaterVersion(version);
@@ -203,7 +211,7 @@ public class ProductController
 		
 	}
     
-    @RequestMapping(value="/Top",method= RequestMethod.GET, produces = "application/json")
+    @RequestMapping(value="/top",method= RequestMethod.GET, produces = "application/json")
     public List<Product> findTopByOrderByImageUrlAsc()
 	{    
 		return productService.findTopByOrderByImageUrlAsc();
