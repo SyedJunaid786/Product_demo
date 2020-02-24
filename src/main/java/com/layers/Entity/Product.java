@@ -1,6 +1,6 @@
 package com.layers.Entity;
 
-import java.math.BigDecimal;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -30,7 +30,7 @@ import lombok.Setter;
 public class Product
 {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @ApiModelProperty(notes = "The database generated product ID")
     @Column(name = "id" , nullable=false)
     private Integer id;
@@ -48,7 +48,10 @@ public class Product
     @ApiModelProperty(notes = "The image URL of the product")
     private String imageUrl;
     
+    
     @ApiModelProperty(notes = "The price of the product", required = true)
-    private BigDecimal price;
+    private List<Integer> price;
+//    private BigDecimal price;
+  
 }
 
